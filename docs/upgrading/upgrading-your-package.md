@@ -397,15 +397,15 @@ We're going to use `atom.views.getView()` again to get the editor element. As in
 ```coffee
 # New!
 describe 'Something', ->
-  [editor, editorView] = []
+  [editor, editorElement] = []
   beforeEach ->
     editor = atom.workspace.getActiveTextEditor()
-    editorView = atom.views.getView(editor)
+    editorElement = atom.views.getView(editor)
 ```
 
 ### Dispatching commands
 
-Since the `editorView` objects are no longer `jQuery` objects, they no longer support `trigger()`. Additionally, Atom has a new command dispatcher, `atom.commands`, that we use rather than commandeering jQuery's `trigger` method.
+Since the `editorElement` objects are no longer `jQuery` objects, they no longer support `trigger()`. Additionally, Atom has a new command dispatcher, `atom.commands`, that we use rather than commandeering jQuery's `trigger` method.
 
 From this:
 
